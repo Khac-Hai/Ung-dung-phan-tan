@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  /* @link https://utopia.fyi/type/calculator?c=320,14,1.125,1240,18,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+
+  --step--2: clamp(0.6914rem, 0.7rem + 0.0498vi, 0.75rem);
+  --step--1: clamp(0.7778rem, 0.7353rem + 0.2126vi, 0.9rem);
+  --step-0: clamp(0.875rem, 0.788rem + 0.4348vi, 1.125rem);
+  --step-1: clamp(0.9844rem, 0.8376rem + 0.7337vi, 1.4063rem);
+  --step-2: clamp(1.1074rem, 0.8812rem + 1.1311vi, 1.7578rem);
+  --step-3: clamp(1.2458rem, 0.9149rem + 1.6546vi, 2.1973rem);
+  --step-4: clamp(1.4016rem, 0.9338rem + 2.3391vi, 2.7466rem);
+  --step-5: clamp(1.5768rem, 0.9311rem + 3.2286vi, 3.4332rem);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+@layer components {
+  @media not all and (hover: none) {
+    .scrollbar-style::-webkit-scrollbar {
+      height: 7px;
+    }
+
+    .scrollbar-style::-webkit-scrollbar-track {
+      @apply bg-dark-900;
+    }
+
+    .scrollbar-style::-webkit-scrollbar-thumb {
+      @apply rounded-sm bg-dark-500;
+    }
+    .scrollbar-style::-webkit-scrollbar-thumb:hover {
+      background: #343434;
+    }
+  }
+}
+html {
+  scrollbar-gutter: stable both-edges;
+}
+body {
+  @apply bg-dark-900 text-white-200;
+}
